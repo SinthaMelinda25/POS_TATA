@@ -157,8 +157,6 @@
     }
 </style>
 
-
-
 <h1 class="page-heading-produk">Produk</h1>
 
 @can('create', App\Models\Produk::class)
@@ -182,13 +180,14 @@
 </form>
 
 <div class="table-card-produk">
-<table class="table align-middle green-table-produk"> <!-- Ditambahkan align-middle agar semua baris sejajar vertikal di tengah -->
+<table class="table align-middle green-table-produk">
   <thead>
     <tr>
       <th scope="col">No</th>
       <th scope="col">User</th>
       <th scope="col">Foto</th>
       <th scope="col">Nama</th>
+      <th scope="col">Jenis</th>
       <th scope="col">Harga Beli</th>
       <th scope="col">Harga Jual</th>
       <th scope="col">Stok</th>
@@ -206,18 +205,21 @@
                   class="img-thumbnail">
       </td>
       <td>{{ $product->nama }}</td>
+      
+      <!-- Selesai Diperbaiki: Menampilkan Nama Jenis Produk yang sesungguhnya di kolom Jenis -->
+      <td>{{ $product->jenis->nama ?? 'Tidak Ada Jenis' }}</td>
+      
       <td>Rp{{ number_format($product->harga_beli, 0, ',', '.') }}</td>
-        <td class="harga-jual">Rp{{ number_format($product->harga_jual, 0, ',', '.') }}</td>
+      <td class="harga-jual">Rp{{ number_format($product->harga_jual, 0, ',', '.') }}</td>
       <td><span class="stok-badge">{{ $product->stok }}</span></td>
       
-      <!-- PERBAIKAN DI SINI: Menghapus d-flex dari td dan memindahkannya ke div bungkus -->
       <td>
         <div class="d-flex align-items-center gap-1">
           @can('update', $product)
             <a href="{{ route('produk.edit' , $product) }}" class="btn btn-edit-produk">Edit</a>
           @endcan
           
-          <span class="aksi-separator-produk">||</span> <!-- Membungkus garis pemisah agar rapi -->
+          <span class="aksi-separator-produk">||</span>
           
           @can('delete', $product)
             <form action="{{ route('produk.destroy', $product) }}" method="POST" class="d-inline m-0">
@@ -233,7 +235,8 @@
     </tr>
     @empty
     <tr>
-        <td colspan="8" class="text-center"><h1>Data tidak tersedia</h1></td>
+        <!-- Selesai Diperbaiki: Mengubah colspan ke 9 karena jumlah total kolom sekarang ada 9 -->
+        <td colspan="9" class="text-center"><h1>Data tidak tersedia</h1></td>
     </tr>
     @endforelse
   </tbody>

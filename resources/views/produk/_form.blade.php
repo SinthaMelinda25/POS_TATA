@@ -44,6 +44,24 @@
     @enderror
 </div>
 
+<!-- Selesai: Dropdown Pilihan Jenis Produk Ditambahkan di Sini -->
+<div>
+    <label>Jenis Produk</label><br>
+    <select name="jenis_id" class="form-control @error('jenis_id') is-invalid @enderror" required>
+        <option value="">-- Pilih Jenis Produk --</option>
+        @foreach($jenis as $item)
+            <option value="{{ $item->id }}" {{ old('jenis_id', $produk->jenis_id ?? '') == $item->id ? 'selected' : '' }}>
+                {{ $item->nama }}
+            </option>
+        @endforeach
+    </select>
+    @error('jenis_id')
+        <div class="invalid-feedback">
+            {{ $message }}
+        </div>
+    @enderror
+</div>
+
 <div>
     <label>Harga Beli</label><br>
     <input type="number" name="purchase_price"

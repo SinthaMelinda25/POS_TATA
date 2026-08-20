@@ -6,6 +6,7 @@ use App\Http\Requests\Produk\StoreRequest;
 use App\Http\Requests\Produk\UpdateRequest;
 use App\Http\Requests\SearchRequest;
 use App\Models\Produk;
+use App\Models\Jenis; // Selesai: Mengimpor model Jenis di paling atas
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -40,7 +41,10 @@ class ProdukController extends Controller
      */
     public function create()
     {
-        return view('produk.create');
+        // Selesai: Mengambil semua data jenis untuk dikirim ke view create
+        $jenis = Jenis::all();
+
+        return view('produk.create', compact('jenis'));
     }
 
     /**
@@ -54,6 +58,7 @@ class ProdukController extends Controller
 
         $data['user_id'] = Auth::id();
         $data['nama'] = $dataReq['name'];
+        $data['jenis_id'] = $dataReq['jenis_id']; // Selesai: Menyimpan data jenis_id dari form
         $data['harga_beli'] = $dataReq['purchase_price'];
         $data['harga_jual'] = $dataReq['selling_price'];
         $data['stok'] = $dataReq['stock'] ?? true;
@@ -65,7 +70,6 @@ class ProdukController extends Controller
         Produk::create($data);
 
         return redirect()->route('produk.index')->with('success', 'Product created successfully.');
-
      }
 
     /**
@@ -83,7 +87,10 @@ class ProdukController extends Controller
     {
         $this->authorize('update', $produk);
 
-        return view('produk.edit', compact('produk'));
+        // Selesai: Mengambil data jenis untuk dikirim ke view edit agar opsi pilihan muncul
+        $jenis = Jenis::all();
+
+        return view('produk.edit', compact('produk', 'jenis'));
     }
 
     /**
@@ -96,27 +103,27 @@ class ProdukController extends Controller
         $dataReq = $request->validated();
 
         $data = [
-        'user_id'       => Auth::id(),
-        'nama'          => $dataReq['name'],
-        'harga_beli'    => $dataReq['purchase_price'],
-        'harga_jual'    => $dataReq['selling_price'],
-        'stok'          => $dataReq['stock'],
-        
-    ];
+            'user_id'       => Auth::id(),
+            'nama'          => $dataReq['name'],
+            'jenis_id'      => $dataReq['jenis_id'], // Selesai: Mengupdate data jenis_id
+            'harga_beli'    => $dataReq['purchase_price'],
+            'harga_jual'    => $dataReq['selling_price'],
+            'stok'          => $dataReq['stock'],
+        ];
 
-    // Jika upload foto baru
-    if ($request->hasFile('foto')) {
+        // Jika upload foto baru
+        if ($request->hasFile('foto')) {
 
-        // Hapus foto lama (jika ada & memang tersimpan)
-        if (
-            $produk->foto &&
-            Storage::disk('public')->exists($produk->foto)
-        ) {
-            Storage::disk('public')->delete($produk->foto);
+            // Hapus foto lama (jika ada & memang tersimpan)
+            if (
+                $produk->foto &&
+                Storage::disk('public')->exists($produk->foto)
+            ) {
+                Storage::disk('public')->delete($produk->foto);
+            }
+            //Simpan Foto baru
+            $data['foto'] = $request->file('foto')->store('products', 'public');
         }
-        //Simpan Foto baru
-        $data['foto'] = $request->file('foto')->store('products', 'public');
-    }
 
         $produk->update($data);
 
@@ -135,6 +142,5 @@ class ProdukController extends Controller
         }
         $produk->delete();
         return redirect()->route('produk.index')->with('success', 'Product deleted successfully.');
-
     }
 }
