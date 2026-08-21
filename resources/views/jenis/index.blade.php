@@ -95,9 +95,7 @@
         vertical-align: middle;
     }
 
-    .green-table-jenis tbody td:first-child {
-        font-weight: 700;
-    }
+    
 
     .btn-edit-jenis {
         background-color: transparent;
@@ -142,7 +140,7 @@
 </style>
 
 <h1 class="page-heading-jenis">Jenis</h1>
-<a href="{{ route('jenis.create') }}" class="btn btn-create-jenis mb-3">Create</a>
+<a href="{{ route('jenis.create') }}" class="btn btn-create-jenis mb-3">Tambah</a>
 
 <form action="{{ route('jenis.index') }}" method="GET" class="mb-3 search-form-jenis">
     <div class="input-group">
@@ -151,11 +149,11 @@
             name="search"
             value="{{ request('search') }}"
             class="form-control"
-            placeholder="Search nama jenis"
+            placeholder="Cari nama jenis"
             autocomplete="off"
         >
         <button class="btn btn-outline-secondary" type="submit">
-            Search
+            Cari
         </button>
     </div>
 </form>

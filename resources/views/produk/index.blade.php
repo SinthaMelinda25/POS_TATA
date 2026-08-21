@@ -96,6 +96,10 @@
         border-color: #e3ece4;
     }
 
+    .green-table-produk tbody th {
+    font-weight: 400;
+}
+
     .green-table-produk .img-thumbnail {
         border: 1px solid var(--green-soft);
         border-radius: 8px;
@@ -160,7 +164,7 @@
 <h1 class="page-heading-produk">Produk</h1>
 
 @can('create', App\Models\Produk::class)
-<a href="{{ route('produk.create')}}" method="GET" class="btn btn-create-produk mb-3">Create</a>
+<a href="{{ route('produk.create')}}" method="GET" class="btn btn-create-produk mb-3">Tambah</a>
 @endcan
 
 <form action="{{ route('produk.index') }}" method="GET" class="mb-3 search-form-produk">
@@ -170,11 +174,11 @@
             name="search"
             value=""
             class="form-control"
-            placeholder="Search nama produk"
+            placeholder="Cari nama produk"
             autocomplete="off"
         >
         <button class="btn btn-outline-secondary" type="submit">
-            Search
+            Cari
         </button>
     </div>
 </form>
@@ -191,7 +195,9 @@
       <th scope="col">Harga Beli</th>
       <th scope="col">Harga Jual</th>
       <th scope="col">Stok</th>
+      @if (auth()->user()->role_id === 1)
       <th scope="col">Aksi</th>
+      @endif
     </tr>
   </thead>
   <tbody>
@@ -213,6 +219,7 @@
       <td class="harga-jual">Rp{{ number_format($product->harga_jual, 0, ',', '.') }}</td>
       <td><span class="stok-badge">{{ $product->stok }}</span></td>
       
+      @if (auth()->user()->role_id === 1)
       <td>
         <div class="d-flex align-items-center gap-1">
           @can('update', $product)
@@ -232,11 +239,12 @@
           @endcan
         </div>
       </td>
+      @endif
     </tr>
     @empty
     <tr>
         <!-- Selesai Diperbaiki: Mengubah colspan ke 9 karena jumlah total kolom sekarang ada 9 -->
-        <td colspan="9" class="text-center"><h1>Data tidak tersedia</h1></td>
+        <td colspan="{{ auth()->user()->role_id === 1 ? 9 : 8 }}" class="text-center"><h1>Data tidak tersedia</h1></td>
     </tr>
     @endforelse
   </tbody>

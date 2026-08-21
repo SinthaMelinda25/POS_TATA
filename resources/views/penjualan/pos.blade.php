@@ -249,7 +249,9 @@
                     <th>Harga</th>
                     <th>Qty</th>
                     <th>Subtotal</th>
+                    @if (auth()->user()->role_id === 1)
                     <th>Aksi</th>
+                    @endif
                 </tr>
             </thead>
             <tbody>
@@ -266,6 +268,7 @@
                              </form>
                         </td>
                         <td>Rp {{ number_format($item->subtotal) }}</td>
+                        @if (auth()->user()->role_id === 1)
                         <td>
                             @can('delete', $item)
                             <form method="POST" action="{{ route('itempenjualan.destroy', $item->id) }}">
@@ -274,10 +277,11 @@
                             </form>
                             @endcan
                         </td>
+                        @endif
                 </tr>
                 @empty
                  <tr>
-                    <td colspan="4" class="text-center text-muted">
+                    <td colspan="{{ auth()->user()->role_id === 1 ? 5 : 4 }}" class="text-center text-muted">
                     Keranjang Kosong
                     </td>
             

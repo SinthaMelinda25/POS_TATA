@@ -96,6 +96,10 @@
         border-color: #e3ece4;
     }
 
+    .green-table-penjualan tbody th {
+    font-weight: 400;
+}
+
     .total-bayar {
         color: var(--green-darkest);
         font-weight: 700;
@@ -205,7 +209,7 @@
 
 <h1 class="page-heading-penjualan">Penjualan</h1>
 
-<a href="{{ route('penjualan.create') }}" class="btn btn-create-penjualan mb-3">Create</a>
+<a href="{{ route('penjualan.create') }}" class="btn btn-create-penjualan mb-3">Tambah</a>
 
 <form action="{{ route('penjualan.index') }}" method="GET" class="mb-3 search-form-penjualan">
     <div class="input-group">
@@ -214,11 +218,11 @@
             name="search"
             value="{{ request()->search }}"
             class="form-control"
-            placeholder="Search kasir"
+            placeholder="Cari kasir"
             autocomplete="off"
         >
         <button class="btn btn-outline-secondary" type="submit">
-            Search
+            Cari
         </button>
     </div>
 </form>

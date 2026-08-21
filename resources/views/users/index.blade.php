@@ -95,10 +95,6 @@
         vertical-align: middle;
     }
 
-    .green-table-users tbody td:first-child {
-        font-weight: 700;
-    }
-
     .role-badge {
         background-color: var(--green-pale);
         color: var(--green-darkest);
@@ -154,7 +150,7 @@
 
 
 <h1 class="page-heading-users">Users</h1>
-<a href="{{ route('admin.users.create') }}" class="btn btn-create mb-3">Create</a>
+<a href="{{ route('admin.users.create') }}" class="btn btn-create mb-3">Tambah</a>
 
 <form action="{{ route('admin.users') }}" method="GET" class="mb-3 search-form-users">
     <div class="input-group">
@@ -163,11 +159,11 @@
             name="search"
             value="{{ request('search') }}"
             class="form-control"
-            placeholder="Search username or email"
+            placeholder="Cari username atau email"
             autocomplete="off"
         >
         <button class="btn btn-outline-secondary" type="submit">
-            Search
+            Cari
         </button>
     </div>
 </form>

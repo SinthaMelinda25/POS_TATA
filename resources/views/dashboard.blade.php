@@ -140,7 +140,7 @@
         <div class="row">
             @can('viewAny', App\Models\User::class)
             <div class="col-md-12">
-                <h1 class="section-title">Today's Sales</h1>
+                <h1 class="section-title">Penjualan Hari Ini</h1>
             </div>
             <div class="col-md-6">
                 <div class="card summary-card">
@@ -165,7 +165,7 @@
         </div>
         <div class="row">
             <div class="col-md-12">
-                <h1 class="section-title">Cash & Payment Status</h1>
+                <h1 class="section-title">Status Pembayaran</h1>
             </div>
             <div class="col-md-6">
                 <div class="card summary-card">
@@ -191,7 +191,7 @@
         @endcan
         <div class="row">
             <div class="col-md-12">
-                <h1 class="section-title">Critical Inventory Status</h1>
+                <h1 class="section-title">Status Stok Kritis</h1>
             </div>
             <div class="col-md-6">
                 <h3 class="subsection-title">Daftar Produk Stok Rendah</h3>
@@ -256,7 +256,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="section-title">Best Seller Product<h1>
+                       <h1 class="section-title">Produk Terlaris<h1>
                     </div>
                     <div class="col-md-12">
                         <div class="table-card">

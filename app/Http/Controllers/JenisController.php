@@ -52,7 +52,7 @@ class JenisController extends Controller
 
         $jeni->update($request->only('nama'));
 
-        return redirect()->route('jenis.index')->with('success', 'Jenis berhasil diupdate.');
+        return redirect()->route('jenis.index')->with('success', 'Jenis berhasil diperbarui.');
     }
 
     public function destroy(Jenis $jeni)

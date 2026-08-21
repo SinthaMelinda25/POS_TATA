@@ -36,7 +36,8 @@
     <label>Nama Produk</label><br>
     <input type="text" name="name"
             class="form-control @error('name') is-invalid @enderror"
-            value="{{ old('name', $produk->nama ?? '') }}">
+            value="{{ old('name', $produk->nama ?? '') }}"
+            autocomplete="off">
         @error('name')
         <div class="invalid-feedback">
             {{ $message }}
@@ -66,7 +67,8 @@
     <label>Harga Beli</label><br>
     <input type="number" name="purchase_price"
             class="form-control @error('purchase_price') is-invalid @enderror"
-            value="{{ old('purchase_price', $produk->harga_beli ?? '') }}">
+            value="{{ old('purchase_price', $produk->harga_beli ?? '') }}"
+            autocomplete="off">
             @error('purchase_price')
             <div class="invalid-feedback">
                 {{ $message }}
@@ -78,7 +80,8 @@
     <label>Harga Jual</label><br>
     <input type="number" name="selling_price"
             class="form-control @error('selling_price') is-invalid @enderror"
-            value="{{ old('selling_price', $produk->harga_jual ?? '') }}">
+            value="{{ old('selling_price', $produk->harga_jual ?? '') }}"
+            autocomplete="off">
             @error('selling_price')
             <div class="invalid-feedback">
                 {{ $message }}
@@ -90,7 +93,8 @@
     <label>Stok</label><br>
     <input type="number" name="stock"
             class="form-control @error('stock') is-invalid @enderror"
-            value="{{ old('stock', $produk->stok ?? '') }}">
+            value="{{ old('stock', $produk->stok ?? '') }}"
+            autocomplete="off">
             @error('stock')
             <div class="invalid-feedback">
                 {{ $message }}
