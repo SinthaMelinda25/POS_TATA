@@ -159,7 +159,7 @@
             name="search"
             value="{{ request('search') }}"
             class="form-control"
-            placeholder="Cari username atau email"
+            placeholder="Cari Username atau Email"
             autocomplete="off"
         >
         <button class="btn btn-outline-secondary" type="submit">
@@ -194,7 +194,7 @@
            <form action="{{ route('admin.users.destroy', $user) }}" method="POST" class="d-inline">
                @csrf
                @method('DELETE')
-               <button class="btn btn-sm btn-delete-user" onclick="return confirm('Yakin hapus user ini?')">Hapus</button>
+               <button class="btn btn-sm btn-delete-user" onclick="return confirm('Apakah anda yakin akan menghapus user ini?')">Hapus</button>
            </form>
         </td>
     </tr>

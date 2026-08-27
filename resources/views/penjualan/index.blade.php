@@ -218,7 +218,7 @@
             name="search"
             value="{{ request()->search }}"
             class="form-control"
-            placeholder="Cari kasir"
+            placeholder="Cari Kasir"
             autocomplete="off"
         >
         <button class="btn btn-outline-secondary" type="submit">

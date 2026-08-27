@@ -149,7 +149,7 @@
             name="search"
             value="{{ request('search') }}"
             class="form-control"
-            placeholder="Cari nama jenis"
+            placeholder="Cari Nama Jenis"
             autocomplete="off"
         >
         <button class="btn btn-outline-secondary" type="submit">
@@ -180,7 +180,7 @@
            <form action="{{ route('jenis.destroy', $item) }}" method="POST" class="d-inline">
                @csrf
                @method('DELETE')
-               <button class="btn btn-sm btn-delete-jenis" onclick="return confirm('Yakin hapus jenis ini?')">Hapus</button>
+               <button class="btn btn-sm btn-delete-jenis" onclick="return confirm('Apakah anda yakin akan menghapus jenis ini?')">Hapus</button>
            </form>
         </td>
     </tr>

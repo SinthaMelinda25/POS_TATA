@@ -174,7 +174,7 @@
             name="search"
             value=""
             class="form-control"
-            placeholder="Cari nama produk"
+            placeholder="Cari Nama Produk"
             autocomplete="off"
         >
         <button class="btn btn-outline-secondary" type="submit">
@@ -232,7 +232,7 @@
             <form action="{{ route('produk.destroy', $product) }}" method="POST" class="d-inline m-0">
                 @csrf
                 @method('DELETE')
-                <button class="btn btn-delete-produk" onclick="return confirm('Apakah anda yakin akan menghapus user ini?')">
+                <button class="btn btn-delete-produk" onclick="return confirm('Apakah anda yakin akan menghapus produk ini?')">
                     Hapus
                 </button> 
             </form>
