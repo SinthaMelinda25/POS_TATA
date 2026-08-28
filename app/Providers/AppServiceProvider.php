@@ -13,6 +13,7 @@ use App\Models\ItemPenjualan;
 use App\Policies\ItemPenjualanPolicy;  
 use App\Policies\PenjualanPolicy;  
 use App\Policies\ProdukPolicy;  
+ 
 
 class AppServiceProvider extends ServiceProvider
 {

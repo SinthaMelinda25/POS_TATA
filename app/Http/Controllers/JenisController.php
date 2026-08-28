@@ -57,6 +57,7 @@ class JenisController extends Controller
 
     public function destroy(Jenis $jeni)
     {
+        $this->authorize('delete', $jeni);
         $jeni->delete();
 
         return back()->with('success', 'Jenis berhasil dihapus.');
