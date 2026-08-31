@@ -5,7 +5,7 @@ namespace Database\Factories;
 use App\Models\Produk;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use App\Models\User;
-
+use App\Models\Jenis; // <--- 1. JANGAN LUPA IMPORT MODEL JENIS DI ATAS
 
 /**
  * @extends Factory<Produk>
@@ -23,6 +23,7 @@ class ProdukFactory extends Factory
 
       return [
         'user_id' => User::where('role_id', 1)->inRandomOrder()->value('id'),
+        'jenis_id' => Jenis::inRandomOrder()->value('id'), // <--- 2. TAMBAHKAN BARIS INI
         'foto' => 'produk/' . $this->faker->uuid . '.jpg',
         'nama' => $this->faker->words(3, true),
         'harga_beli' => $hargaBeli,
