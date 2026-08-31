@@ -170,13 +170,13 @@
 <form action="{{ route('produk.index') }}" method="GET" class="mb-3 search-form-produk">
     <div class="input-group">
         <input 
-            type="text"
-            name="search"
-            value=""
-            class="form-control"
-            placeholder="Cari Nama Produk"
-            autocomplete="off"
-        >
+        type="text"
+        name="search"
+        value="{{ request('search') }}"
+        class="form-control"
+        placeholder="Cari Nama Produk"
+        autocomplete="off"
+>
         <button class="btn btn-outline-secondary" type="submit">
             Cari
         </button>
