@@ -159,7 +159,7 @@
             name="search"
             value="{{ request('search') }}"
             class="form-control"
-            placeholder="Cari Username atau Email"
+            placeholder="Cari Nama atau Email"
             autocomplete="off"
         >
         <button class="btn btn-outline-secondary" type="submit">
@@ -173,7 +173,7 @@
   <thead>
     <tr>
       <th scope="col">No</th>
-      <th scope="col">Name</th>
+      <th scope="col">Nama</th>
       <th scope="col">Email</th>
       <th scope="col">Role</th>
       <th scope="col">Aksi</th>

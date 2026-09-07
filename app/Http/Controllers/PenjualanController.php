@@ -113,10 +113,14 @@ class PenjualanController extends Controller
      * Update the specified resource in storage.
      */
     public function update(Request $request, Penjualan $penjualan)
-    {
-        $request->validate([
-            'payment_method' => 'required|in:CASH,QRIS'
-        ]);
+{
+    $request->validate([
+        'payment_method' => 'required|in:CASH,QRIS'
+    ], [
+        'payment_method.required' => 'Silakan pilih metode pembayaran terlebih dahulu.',
+        'payment_method.in' => 'Metode pembayaran tidak valid.',
+    ]);
+    
 
         if ($penjualan->status !== 'OPEN') {
             return back()->with('errors', 'Transaksi sudah diproses.');

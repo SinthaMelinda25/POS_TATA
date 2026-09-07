@@ -171,9 +171,22 @@
     }
 </style>
 
-@if(session('errors'))
+{{-- 1. Menampilkan error validasi bawaan Laravel dengan aman --}}
+@if (isset($errors) && is_object($errors) && $errors->any())
     <div class="alert alert-danger">
-        {{ session('errors') }}
+        {{ $errors->first() }}
+    </div>
+@elseif(is_string($errors) && !empty($errors))
+    {{-- Jika variabel $errors terlanjur menjadi string akibat session lama yang tersangkut --}}
+    <div class="alert alert-danger">
+        {{ $errors }}
+    </div>
+@endif
+
+{{-- 2. Menampilkan error kustom baru Anda dari session flash --}}
+@if (session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
     </div>
 @endif
 
