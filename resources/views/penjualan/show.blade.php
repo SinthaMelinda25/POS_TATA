@@ -233,6 +233,18 @@
         </div>
 
         <div class="struk-info" style="margin-top:.7rem;">
+            <!-- Hanya tampilkan Uang Masuk dan Kembalian jika metode pembayarannya BUKAN QRIS -->
+            @if(($sale->metode_pembayaran ?? '') !== 'QRIS')
+                <div class="row-item">
+                    <span>Uang Masuk</span>
+                    <span>Rp{{ number_format($sale->uang_masuk ?? 0, 0, ',', '.') }}</span>
+                </div>
+                <div class="row-item">
+                    <span>Kembalian</span>
+                    <span>Rp{{ number_format($sale->uang_kembalian ?? 0, 0, ',', '.') }}</span>
+                </div>
+            @endif
+            
             <div class="row-item">
                 <span>Metode Bayar</span>
                 <span>{{ $sale->metode_pembayaran ?? '-' }}</span>
