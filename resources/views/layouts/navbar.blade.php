@@ -110,7 +110,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-pos">
     <div class="container">
-        <a class="navbar-brand" href="#">Point Of Sale</a>
+        <a class="navbar-brand" href="#">Dapur Nusantara</a>
         
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -140,6 +140,10 @@
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('penjualan') ? 'active' : '' }}" href="{{ route('penjualan.index') }}">Penjualan</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link {{ Request::is('tentang') ? 'active' : '' }}" href="{{ route('tentang') }}"></a>
+                </li>
+                
             </ul>
             
             <form action="{{ route('logout') }}" method="POST" class="d-flex mb-0">

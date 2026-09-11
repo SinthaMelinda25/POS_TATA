@@ -188,7 +188,7 @@
     <div class="struk">
 
         <div class="struk-header">
-            <div class="toko-name">POINT OF SALE</div>
+            <div class="toko-name">Dapur Nusantara</div>
             <div class="toko-sub">Detail Transaksi Penjualan</div>
         </div>
 
@@ -197,11 +197,15 @@
         <div class="struk-info">
             <div class="row-item">
                 <span>No. Transaksi</span>
-                <span>#{{ str_pad($sale->id, 6, '0', STR_PAD_LEFT) }}</span>
+                <span>#{{ str_pad($sale->id, 4, '0', STR_PAD_LEFT) }}</span>
             </div>
             <div class="row-item">
                 <span>Tanggal</span>
-                <span>{{ $sale->created_at ? $sale->created_at->translatedFormat('d-m-Y H:i:s') : '-' }}</span>
+                <span>{{ $sale->created_at ? $sale->created_at->translatedFormat('d-m-Y') : '-' }}</span>
+            </div>
+            <div class="row-item">
+                <span>Waktu</span>
+                <span>{{ $sale->created_at ? $sale->created_at->translatedFormat('H:i:s') : '-' }}</span>
             </div>
             <div class="row-item">
                 <span>Kasir</span>
@@ -251,9 +255,7 @@
             </div>
         </div>
 
-        <div class="struk-status">
-            <span class="badge-status">{{ $sale->status }}</span>
-        </div>
+       
 
         <div class="struk-footer">
             *** Terima Kasih ***

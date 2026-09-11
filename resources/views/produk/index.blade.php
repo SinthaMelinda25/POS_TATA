@@ -192,7 +192,7 @@
       <th scope="col">Foto</th>
       <th scope="col">Nama</th>
       <th scope="col">Jenis</th>
-      <th scope="col">Harga Beli</th>
+      <th scope="col">Harga Pokok</th>
       <th scope="col">Harga Jual</th>
       <th scope="col">Stok</th>
       @if (auth()->user()->role_id === 1)

@@ -186,7 +186,8 @@
     </tr>
     @empty
     <tr>
-        <td colspan="3" class="text-center text-muted">Data tidak ditemukan</td>
+        <!-- Selesai Diperbaiki: Mengubah colspan ke 9 karena jumlah total kolom sekarang ada 9 -->
+        <td colspan="{{ auth()->user()->role_id === 1 ? 9 : 8 }}" class="text-center"><h1>Data tidak tersedia</h1></td>
     </tr>
     @endforelse
   </tbody>

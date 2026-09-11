@@ -218,7 +218,7 @@
             name="search"
             value="{{ request()->search }}"
             class="form-control"
-            placeholder="Cari Kasir"
+            placeholder="Cari Nama Kasir"
             autocomplete="off"
         >
         <button class="btn btn-outline-secondary" type="submit">
@@ -269,7 +269,8 @@
     </tr>
     @empty
     <tr>
-        <td colspan="6">Data tidak ditemukan</td>
+        <!-- Selesai Diperbaiki: Mengubah colspan ke 9 karena jumlah total kolom sekarang ada 9 -->
+        <td colspan="{{ auth()->user()->role_id === 1 ? 9 : 8 }}" class="text-center"><h1>Data tidak tersedia</h1></td>
     </tr>
     @endforelse
 </tbody>

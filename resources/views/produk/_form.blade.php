@@ -64,7 +64,7 @@
 </div>
 
 <div>
-    <label>Harga Beli</label><br>
+    <label>Harga Pokok</label><br>
     <input type="number" name="purchase_price"
             class="form-control @error('purchase_price') is-invalid @enderror"
             value="{{ old('purchase_price', $produk->harga_beli ?? '') }}"
