@@ -22,15 +22,27 @@
         background-color: #fff;
         border-bottom: 1px solid var(--green-soft);
         box-shadow: 0 2px 8px rgba(51, 98, 60, 0.06);
-        padding: .8rem 0;
+        padding: .6rem 0; /* Sedikit diperkecil agar navbar tidak terlalu tebal */
     }
 
+    /* Perbaikan: Nama class disamakan dengan HTML & margin bawah dihapus */
+    .foto-profil {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 12px; /* Memberi jarak ke kanan (ke teks Dapur Nusantara) */
+    }
+
+    /* Perbaikan: Ditambahkan flexbox agar logo & teks sejajar vertikal */
     .navbar-pos .navbar-brand {
-    color: #204a29;
-    font-weight: 800;
-    font-size: 1.35rem;
-    letter-spacing: .5px;
-}
+        color: #204a29;
+        font-weight: 800;
+        font-size: 1.35rem;
+        letter-spacing: .5px;
+        display: flex;
+        align-items: center;
+    }
 
     .navbar-pos .navbar-nav {
         align-items: center;
@@ -110,7 +122,11 @@
 
 <nav class="navbar navbar-expand-lg navbar-pos">
     <div class="container">
-        <a class="navbar-brand" href="#">Dapur Nusantara</a>
+        <!-- Perbaikan: Gambar dimasukkan ke dalam navbar-brand agar sejajar sempurna -->
+        <a class="navbar-brand" href="#">
+            <img src="{{ asset('assets/img/dapur.jpg') }}" alt="Logo" class="foto-profil">
+            Dapur Nusantara
+        </a>
         
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -141,9 +157,8 @@
                     <a class="nav-link {{ Request::is('penjualan') ? 'active' : '' }}" href="{{ route('penjualan.index') }}">Penjualan</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::is('tentang') ? 'active' : '' }}" href="{{ route('tentang') }}"></a>
+                    <a class="nav-link {{ Request::is('tentang') ? 'active' : '' }}" aria-current="page" href="{{ route('tentang') }}">Tentang</a>
                 </li>
-                
             </ul>
             
             <form action="{{ route('logout') }}" method="POST" class="d-flex mb-0">

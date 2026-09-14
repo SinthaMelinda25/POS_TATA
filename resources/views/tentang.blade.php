@@ -31,14 +31,17 @@
         margin: 0 auto 2rem;
         text-align: center;
     }
-
-    .foto-profil {
-        width: 150px;
-        height: 150px;
+    
+    
+    .foto-tentang-card {
+        width: 120px;          
+        height: 120px;
         border-radius: 50%;
         object-fit: cover;
         border: 4px solid var(--green-primary);
-        margin-bottom: 1.2rem;
+        box-shadow: 0 4px 10px rgba(51, 98, 60, 0.15); 
+        margin: 0 auto 1.2rem; 
+        display: block;
     }
 
     .nama-profil {
@@ -84,26 +87,31 @@
 <h1 class="page-heading-tentang">Tentang</h1>
 
 <div class="tentang-card">
-    <img src="{{ asset('assets/img/tata.jpg') }}" alt="" class="foto-profil">
-    <div class="nama-profil">Sintha Melinda</div>
-    <div class="role-profil">Developer</div>
+    <!-- Perbaikan: Class diganti menjadi foto-tentang-card -->
+    <img src="{{ asset('assets/img/dapur.jpg') }}" alt="Logo Dapur Nusantara" class="foto-tentang-card">
+    
+    <div class="nama-profil">Dapur Nusantara</div>
+    <div class="role-profil">Makanan dan Minuman Nuansa Nusantara</div>
 
     <div class="divider-tentang"></div>
 
     <div class="deskripsi-app">
         <h5>Tentang Aplikasi</h5>
         <p>
-            Dapur Nusantara adalah aplikasi Point of Sale (POS) berbasis web dengan menggunakan framework Laravel untuk membantu proses transaksi penjualan makanan dan minuman secara digital.
+            Dapur Nusantara adalah restoran sederhana yang menyediakan makanan dan minuman yang bernuansa nusantara yang tidak tertinggal oleh zaman.
         </p>
         <h5>Cara kerja aplikasi:</h5>
         <ul>
-            <li><strong>Login</strong> — pengguna masuk sesuai peran (Admin atau Kasir).</li>
-            <li><strong>Dashboard</strong> — ringkasan penjualan & stok ditampilkan otomatis.</li>
-            <li><strong>Kelola Data</strong> — Admin mengatur data user, jenis, dan produk.</li>
-            <li><strong>Transaksi</strong> — Kasir memilih produk, sistem menghitung total otomatis.</li>
-            <li><strong>Checkout</strong> — pembayaran dipilih (Cash/QRIS), transaksi tersimpan.</li>
-            
+            <li><strong>Makanan</strong> — Seperti Kerak Telur, Sate Madura, Rawon, dan lain-lain.</li>
+            <li><strong>Minuman</strong> — Seperti Teh Hangat, Es Cendol, Bandrek,.</li>
         </ul>
+    </div>
+     
+     <div class="deskripsi-app">
+        <h5>Alamat:</h5>
+        <strong>Jl. Cilolohan, Kahuripan, Kec. Tawang, Kab. Tasikmalaya, Jawa Barat</strong>
+        
+        
     </div>
 </div>
 
