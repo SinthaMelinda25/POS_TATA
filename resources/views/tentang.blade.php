@@ -106,6 +106,15 @@
         font-weight: 600;
         line-height: 1.6;
     }
+
+    .copyright-tentang {
+        text-align: center;
+        color: #8a9a8d;
+        font-size: .8rem;
+        margin-top: 2rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--green-pale);
+    }
 </style>
 
 <h1 class="page-heading-tentang">Tentang</h1>
@@ -120,7 +129,7 @@
     <div class="divider-tentang"></div>
 
     <div class="deskripsi-app">
-        <h5>Cerita Kami</h5>
+        <h5 class="text-center fw-bold">Cerita Kami</h5>
         <p>
             Dapur Nusantara hadir dengan satu tujuan sederhana yaitu menghadirkan
             kembali cita rasa masakan tradisional Indonesia yang mulai jarang
@@ -131,7 +140,7 @@
     </div>
 
     <div class="deskripsi-app">
-        <h5>Komitmen Kami</h5>
+        <h5 class="text-center fw-bold">Komitmen Kami</h5>
         <p>
             Kami berkomitmen menggunakan bahan-bahan segar dan berkualitas
             di setiap masakan, dengan harga yang tetap ramah di kantong.
@@ -141,10 +150,14 @@
     </div>
      
     <div class="deskripsi-app">
-        <h5>Alamat</h5>
+        <h5 class="text-center fw-bold">Alamat</h5>
         <div class="alamat-box">
             Jl. Cilolohan, Kahuripan, Kec. Tawang, Kab. Tasikmalaya, Jawa Barat
         </div>
+    </div>
+
+    <div class="copyright-tentang">
+        &copy; {{ date('Y') }} Dapur Nusantara. 
     </div>
 </div>
 
