@@ -182,7 +182,7 @@
     }
 </style>
 
-<h1 class="page-heading-detail">Detail Penjualan</h1>
+<h1 class="page-heading-detail">Detail</h1>
 
 <div class="struk-wrapper">
     <div class="struk">

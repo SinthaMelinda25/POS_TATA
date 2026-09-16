@@ -193,9 +193,10 @@
             <div class="col-md-12">
                 <h1 class="section-title">Status Stok Kritis</h1>
             </div>
-            <div class="col-md-6">
+            <div class="col-12 col-md-6">
                 <h3 class="subsection-title">Daftar Produk Stok Rendah</h3>
                 <div class="table-card">
+                <div class="table-responsive-pos">
                <table class="table green-table">
                     <thead>
                         <tr>
@@ -221,11 +222,13 @@
                     </tbody>
                     </table>
                     </div>
+                    </div>
                     {{ $produkStokRendah->links()}}
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-12 col-md-6">
                         <h3 class="subsection-title">Produk Habis Stok</h3>
                         <div class="table-card">
+                        <div class="table-responsive-pos">
                         <table class="table green-table">
                     <thead>
                         <tr>
@@ -250,6 +253,7 @@
                         @endforelse
                     </tbody>
                     </table>
+                    </div>
                     </div>
                     {{ $produkStokHabis->links()}}
                     </div>

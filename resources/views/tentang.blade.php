@@ -55,6 +55,7 @@
         color: var(--green-primary);
         font-weight: 500;
         margin-bottom: 1.5rem;
+        font-style: italic;
     }
 
     .divider-tentang {
@@ -65,22 +66,45 @@
     .deskripsi-app {
         text-align: left;
         color: #444;
-        line-height: 1.7;
+        line-height: 1.8;
+        margin-bottom: 1.6rem;
+    }
+
+    .deskripsi-app:last-child {
+        margin-bottom: 0;
     }
 
     .deskripsi-app h5 {
         color: var(--green-darkest);
         font-weight: 700;
-        margin-bottom: .8rem;
+        margin-bottom: .9rem;
+        font-size: 1.05rem;
+    }
+
+    .deskripsi-app p {
+        margin-bottom: 0;
     }
 
     .deskripsi-app ul {
-        padding-left: 1.2rem;
+        padding-left: 1.3rem;
         margin-bottom: 0;
     }
 
     .deskripsi-app li {
-        margin-bottom: .5rem;
+        margin-bottom: .6rem;
+    }
+
+    .deskripsi-app li:last-child {
+        margin-bottom: 0;
+    }
+
+    .alamat-box {
+        background-color: var(--green-pale);
+        border-radius: 10px;
+        padding: .9rem 1.1rem;
+        color: var(--green-darkest);
+        font-weight: 600;
+        line-height: 1.6;
     }
 </style>
 
@@ -96,22 +120,31 @@
     <div class="divider-tentang"></div>
 
     <div class="deskripsi-app">
-        <h5>Tentang Aplikasi</h5>
+        <h5>Cerita Kami</h5>
         <p>
-            Dapur Nusantara adalah restoran sederhana yang menyediakan makanan dan minuman yang bernuansa nusantara yang tidak tertinggal oleh zaman.
+            Dapur Nusantara hadir dengan satu tujuan sederhana yaitu menghadirkan
+            kembali cita rasa masakan tradisional Indonesia yang mulai jarang
+            ditemui di tengah gempuran makanan modern. Setiap hidangan kami
+            racik dengan resep otentik yang tetap mempertahankan cita rasa
+            asli Nusantara.
         </p>
-        <h5>Cara kerja aplikasi:</h5>
-        <ul>
-            <li><strong>Makanan</strong> — Seperti Kerak Telur, Sate Madura, Rawon, dan lain-lain.</li>
-            <li><strong>Minuman</strong> — Seperti Teh Hangat, Es Cendol, Bandrek,.</li>
-        </ul>
+    </div>
+
+    <div class="deskripsi-app">
+        <h5>Komitmen Kami</h5>
+        <p>
+            Kami berkomitmen menggunakan bahan-bahan segar dan berkualitas
+            di setiap masakan, dengan harga yang tetap ramah di kantong.
+            Suasana yang hangat dan cita rasa autentik membuat setiap kunjungan
+            terasa seperti pulang ke rumah.
+        </p>
     </div>
      
-     <div class="deskripsi-app">
-        <h5>Alamat:</h5>
-        <strong>Jl. Cilolohan, Kahuripan, Kec. Tawang, Kab. Tasikmalaya, Jawa Barat</strong>
-        
-        
+    <div class="deskripsi-app">
+        <h5>Alamat</h5>
+        <div class="alamat-box">
+            Jl. Cilolohan, Kahuripan, Kec. Tawang, Kab. Tasikmalaya, Jawa Barat
+        </div>
     </div>
 </div>
 

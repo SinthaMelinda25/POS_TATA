@@ -7,6 +7,7 @@
     <title>@yield('title')</title>
     <!-- memanggil file css bootstrap -->
     @vite('resources/css/app.css', 'resources/js/app.js')
+    @include('layouts.responsive')
 </head>
 
 <body>
@@ -27,6 +28,8 @@
         @yield('content')
 
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 
